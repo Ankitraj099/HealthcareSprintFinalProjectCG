@@ -15,9 +15,7 @@ app = FastAPI(
     version="1.0"
 )
 
-# -----------------------------------
 # INCLUDE ROUTES
-# -----------------------------------
 
 app.include_router(health_router)
 

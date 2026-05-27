@@ -8,9 +8,7 @@ from agents.healthcare_analytics_agent import (
 
 router = APIRouter()
 
-# -----------------------------------
 # DATA ANALYST AGENT ENDPOINT
-# -----------------------------------
 
 @router.post("/analytics-agent")
 

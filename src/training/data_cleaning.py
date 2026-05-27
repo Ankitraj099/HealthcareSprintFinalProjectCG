@@ -10,16 +10,12 @@ df = pd.read_csv(DATA_PATH)
 print("Dataset Loaded Successfully")
 print("Initial Shape:", df.shape)
 
-# -------------------------------
 # CHECK NULL VALUES
-# -------------------------------
 
 print("\nMissing Values:")
 print(df.isnull().sum())
 
-# -------------------------------
 # REMOVE DUPLICATES
-# -------------------------------
 
 before = df.shape[0]
 
@@ -29,9 +25,7 @@ after = df.shape[0]
 
 print(f"\nDuplicates Removed: {before - after}")
 
-# -------------------------------
 # HANDLE MISSING VALUES
-# -------------------------------
 
 numerical_cols = [
     'age',
@@ -51,18 +45,14 @@ categorical_cols = [
 for col in categorical_cols:
     df[col].fillna(df[col].mode()[0], inplace=True)
 
-# -------------------------------
 # FINAL CHECK
-# -------------------------------
 
 print("\nFinal Missing Values:")
 print(df.isnull().sum())
 
 print("\nFinal Shape:", df.shape)
 
-# -------------------------------
 # SAVE CLEANED DATA
-# -------------------------------
 
 OUTPUT_PATH = "../data/processed/cleaned_diabetes.csv"
 

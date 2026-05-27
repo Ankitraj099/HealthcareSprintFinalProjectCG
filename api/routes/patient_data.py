@@ -15,7 +15,7 @@ def add_patient(data: PatientData):
     try:
 
         patient_record = {
-
+            "name": data.name,
             "gender": data.gender,
             "age": data.age,
             "hypertension": data.hypertension,

@@ -2,10 +2,6 @@ import pandas as pd
 
 from pathlib import Path
 
-# -----------------------------------
-# LOAD DATASET
-# -----------------------------------
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 DATA_PATH = (
@@ -18,17 +14,11 @@ DATA_PATH = (
 
 df = pd.read_csv(DATA_PATH)
 
-# -----------------------------------
-# DATA ANALYST AGENT
-# -----------------------------------
-
 def DataAnalystAgent(query):
 
     query = query.lower()
 
-    # -----------------------------------
     # TOTAL PATIENTS
-    # -----------------------------------
 
     if "total patients" in query:
 
@@ -42,9 +32,7 @@ def DataAnalystAgent(query):
             """
         }
 
-    # -----------------------------------
     # DIABETIC PATIENTS
-    # -----------------------------------
 
     elif "diabetic" in query:
 
@@ -72,9 +60,7 @@ def DataAnalystAgent(query):
             """
         }
 
-    # -----------------------------------
     # AVERAGE GLUCOSE
-    # -----------------------------------
 
     elif "glucose" in query:
 
@@ -93,9 +79,7 @@ def DataAnalystAgent(query):
             """
         }
 
-    # -----------------------------------
     # AVERAGE BMI
-    # -----------------------------------
 
     elif "bmi" in query:
 
@@ -114,9 +98,7 @@ def DataAnalystAgent(query):
             """
         }
 
-    # -----------------------------------
     # HYPERTENSION ANALYSIS
-    # -----------------------------------
 
     elif "hypertension" in query:
 
@@ -134,9 +116,7 @@ def DataAnalystAgent(query):
             """
         }
 
-    # -----------------------------------
     # HEART DISEASE ANALYSIS
-    # -----------------------------------
 
     elif "heart disease" in query:
 
@@ -154,9 +134,7 @@ def DataAnalystAgent(query):
             """
         }
 
-    # -----------------------------------
     # DEFAULT ANALYTICS SUMMARY
-    # -----------------------------------
 
     else:
 

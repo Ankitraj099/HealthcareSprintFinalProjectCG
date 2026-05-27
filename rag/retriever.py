@@ -2,9 +2,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 
 from langchain_community.vectorstores import Chroma
 
-# -----------------------------------
 # LOAD EMBEDDING MODEL
-# -----------------------------------
 
 embedding_model = HuggingFaceEmbeddings(
 
@@ -12,9 +10,7 @@ embedding_model = HuggingFaceEmbeddings(
 
 )
 
-# -----------------------------------
 # LOAD VECTOR DB
-# -----------------------------------
 
 vector_db = Chroma(
 
@@ -24,9 +20,7 @@ vector_db = Chroma(
 
 )
 
-# -----------------------------------
 # RETRIEVER
-# -----------------------------------
 
 retriever = vector_db.as_retriever(
     search_kwargs={"k": 3}

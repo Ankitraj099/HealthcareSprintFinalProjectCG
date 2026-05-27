@@ -5,9 +5,6 @@ from rag.retriever import retriever
 
 import os
 
-# -----------------------------------
-# LOAD ENV
-# -----------------------------------
 
 load_dotenv()
 
@@ -19,9 +16,7 @@ client = AzureOpenAI(
 
 deployment_name = os.getenv("AZURE_OPENAI_DEPLOYMENT")
 
-# -----------------------------------
 # RAG FUNCTION
-# -----------------------------------
 
 def ask_rag(question):
 

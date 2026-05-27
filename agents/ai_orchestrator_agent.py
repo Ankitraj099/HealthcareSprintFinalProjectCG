@@ -13,17 +13,13 @@ def run_healthcare_agents(query):
 
     responses = []
 
-    # -----------------------------------
     # RAG AGENT
-    # -----------------------------------
 
     rag_response = medical_rag_agent(query)
 
     responses.append(rag_response)
 
-    # -----------------------------------
     # SYMPTOM AGENT
-    # -----------------------------------
 
     symptom_response = symptom_triage_agent(
         query
@@ -31,9 +27,7 @@ def run_healthcare_agents(query):
 
     responses.append(symptom_response)
 
-    # -----------------------------------
     # ANALYTICS AGENT
-    # -----------------------------------
 
     if (
         "analytics" in query.lower()

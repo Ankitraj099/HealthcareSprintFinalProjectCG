@@ -8,15 +8,9 @@ from langchain_community.vectorstores import Chroma
 
 import os
 
-# -----------------------------------
-# PDF PATH
-# -----------------------------------
 
 PDF_PATH = "documents/medical_book.pdf"
 
-# -----------------------------------
-# LOAD PDF
-# -----------------------------------
 
 loader = PyPDFLoader(PDF_PATH)
 
@@ -24,9 +18,7 @@ documents = loader.load()
 
 print(f"Loaded {len(documents)} pages")
 
-# -----------------------------------
 # SPLIT DOCUMENTS
-# -----------------------------------
 
 text_splitter = RecursiveCharacterTextSplitter(
 
@@ -39,9 +31,7 @@ docs = text_splitter.split_documents(documents)
 
 print(f"Created {len(docs)} chunks")
 
-# -----------------------------------
 # EMBEDDING MODEL
-# -----------------------------------
 
 embedding_model = HuggingFaceEmbeddings(
 
@@ -49,9 +39,7 @@ embedding_model = HuggingFaceEmbeddings(
 
 )
 
-# -----------------------------------
 # CREATE VECTOR DATABASE
-# -----------------------------------
 
 vector_db = Chroma.from_documents(
 

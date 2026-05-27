@@ -3,17 +3,12 @@ import joblib
 
 from sklearn.preprocessing import LabelEncoder
 
-# -------------------------------
-# LOAD CLEANED DATA
-# -------------------------------
 
 df = pd.read_csv("../data/processed/cleaned_diabetes.csv")
 
 print("Dataset Loaded")
 
-# -------------------------------
 # ENCODE CATEGORICAL FEATURES
-# -------------------------------
 
 gender_encoder = LabelEncoder()
 smoking_encoder = LabelEncoder()
@@ -24,9 +19,7 @@ df['smoking_history'] = smoking_encoder.fit_transform(
     df['smoking_history']
 )
 
-# -------------------------------
 # SAVE ENCODERS
-# -------------------------------
 
 joblib.dump(
     gender_encoder,
@@ -40,9 +33,7 @@ joblib.dump(
 
 print("Encoders Saved")
 
-# -------------------------------
 # SAVE FINAL DATASET
-# -------------------------------
 
 FINAL_DATA_PATH = "../data/processed/final_diabetes.csv"
 
